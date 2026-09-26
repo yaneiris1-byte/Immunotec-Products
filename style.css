@@ -1,0 +1,1145 @@
+:root {
+  --bg: #ffffff;
+  --panel: #ffffff;
+  --text: #111111;
+  --muted: #4d4d4d;
+  --line: #e8e8e8;
+  --soft: #fafafa;
+  --button: #111111;
+  --button-text: #ffffff;
+  --shadow: rgba(17, 17, 17, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(6px);
+  padding: 2px 2% 0;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.nav-topline {
+  min-height: 60px;
+  padding-top: 0;
+  flex-wrap: wrap;
+}
+
+.register-link,
+.meta-link {
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  transition: opacity 0.2s ease;
+}
+
+.register-link {
+  margin-left: 0;
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+
+.consultor-banner-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 100%;
+  max-width: 1280px;
+  padding: 0;
+  margin-top: 0;
+  order: -1;
+}
+
+.consultor-banner-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 4px;
+  width: 50%;
+}
+
+.consultor-banner {
+  width: 100%;
+  object-fit: contain;
+  filter: grayscale(1) contrast(1.2);
+  transition: none;
+  opacity: 0.98;
+}
+
+.patrocinador-tag {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.header-meta {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 200px;
+}
+
+.whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.whatsapp-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
+  animation: whatsappPulse 2.4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes whatsappPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+.nav-menu {
+  padding-top: 2px;
+  padding-bottom: 8px;
+  border-top: 1px solid rgba(17, 17, 17, 0.04);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  transition: opacity 0.2s ease;
+}
+
+nav a:hover,
+.register-link:hover,
+.meta-link:hover {
+  opacity: 0.7;
+}
+
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--text);
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.lang-link {
+  padding: 6px 10px;
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.lang-link.active {
+  background: var(--button);
+  color: var(--button-text);
+}
+
+.btn-nav,
+.btn-secondary,
+.btn-mega-cta,
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--button);
+  color: var(--button-text);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.btn-nav {
+  padding: 10px 22px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.btn-nav:hover,
+.btn-secondary:hover,
+.btn-mega-cta:hover,
+.btn-whatsapp:hover,
+.floating-whatsapp:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.hero {
+  background: var(--bg);
+  padding: 28px 5% 44px;
+  text-align: center;
+}
+
+.hero-layout {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(240px, 0.85fr) minmax(0, 1.4fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 72px);
+}
+
+.hero-content {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.hero-layout .hero-content {
+  max-width: none;
+  text-align: left;
+}
+
+.product-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 0.95;
+  overflow: hidden;
+  background: #f7f7f5;
+  border: 1px solid #e8e8e8;
+}
+
+.carousel-slides,
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-shop-link {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.carousel-slide {
+  object-fit: contain;
+  padding: 12%;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.carousel-slide.is-active {
+  opacity: 1;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text);
+  cursor: pointer;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.carousel-prev {
+  left: 12px;
+}
+
+.carousel-next {
+  right: 12px;
+}
+
+.carousel-dots {
+  position: absolute;
+  right: 0;
+  bottom: 14px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #a9a9a9;
+  cursor: pointer;
+}
+
+.carousel-dot.is-active {
+  background: #111;
+}
+
+.eyebrow,
+.pretitle {
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: calc(clamp(1.7rem, 3.4vw, 3.5rem) - 5pt);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+.hero-lead {
+  max-width: 700px;
+  margin: 0 auto 26px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.trust-signals {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.btn-mega-cta {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: min(100%, 720px);
+  padding: 18px 28px;
+  min-height: 88px;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: linear-gradient(180deg, #171717 0%, #0d0d0d 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.08),
+    0 12px 26px rgba(17, 17, 17, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.2s ease;
+}
+
+.btn-mega-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.24), 0 0 16px rgba(255, 255, 255, 0.14);
+  animation: glowPulse 2.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.btn-mega-cta:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    0 18px 30px rgba(17, 17, 17, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.btn-mega-cta:active {
+  transform: translateY(0) scale(0.995);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.12),
+    0 8px 14px rgba(17, 17, 17, 0.14),
+    0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.btn-mega-cta small {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.01);
+  }
+}
+
+.btn-whatsapp {
+  padding: 15px 24px;
+  font-size: 0.96rem;
+  font-weight: 700;
+  gap: 8px;
+  background: #187a3e;
+  color: #fff;
+  line-height: 1.35;
+}
+
+.glutathione-section {
+  padding: 48px 5% 58px;
+  background: var(--soft);
+  scroll-margin-top: 150px;
+}
+
+.glutathione-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.glutathione-inner > h2 {
+  margin-bottom: 32px;
+  color: var(--text);
+  font-size: 2.5rem;
+  line-height: 1.1;
+  font-weight: 500;
+  text-align: center;
+}
+
+.glutathione-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 960px;
+  margin: 0 auto;
+  gap: 14px;
+}
+
+.glutathione-card,
+.glutathione-photo {
+  min-width: 0;
+  min-height: 224px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.glutathione-card {
+  aspect-ratio: 1 / 0.9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22px;
+  background: #eef0f2;
+  color: var(--text);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glutathione-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px var(--shadow);
+}
+
+.glutathione-card-dark {
+  background: #082f40;
+  color: #fff;
+}
+
+.glutathione-card-bluegray {
+  background: #d4dce2;
+  color: #111;
+}
+
+.glutathione-card-charcoal {
+  background: #34383c;
+  color: #fff;
+}
+
+.glutathione-card-molecule {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #082f40;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+.glutathione-card-molecule::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(4, 20, 31, 0.48), rgba(4, 20, 31, 0.82));
+  content: "";
+}
+
+.glutathione-card-molecule-a {
+  background-image: url("img/molecula 1.jpg");
+}
+
+.glutathione-card-molecule-b {
+  background-image: url("img/molecula 2.jpg");
+}
+
+.glutathione-card h3 {
+  margin-bottom: 18px;
+  font-size: 1.08rem;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.glutathione-card p {
+  font-size: 0.9rem;
+  line-height: 1.35;
+  text-align: justify;
+}
+
+.glutathione-photo {
+  margin: 0;
+  background: #e8e8e8;
+}
+
+.glutathione-photo img {
+  width: 100%;
+  height: 100%;
+  min-height: 224px;
+  display: block;
+  object-fit: contain;
+  padding: 18px;
+  background: #eef0f2;
+}
+
+@media (max-width: 960px) {
+  .glutathione-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.target-segments {
+  background: var(--soft);
+  padding: 62px 5% 60px;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.section-heading h2,
+.science-copy h2,
+.crm-box h2 {
+  color: var(--text);
+  font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.section-subtitle,
+.science-copy p,
+.crm-box p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.grid-segments {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.segment-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 26px 20px;
+  box-shadow: 0 8px 18px var(--shadow);
+}
+
+.segment-card .icon {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.segment-card h3 {
+  color: var(--text);
+  font-size: 1.24rem;
+  margin-bottom: 8px;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+.segment-card p {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.science-zone {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 68px 5% 24px;
+}
+
+.science-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.science-grid-copy {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.science-copy {
+  max-width: 900px;
+  padding: 10px 0;
+}
+
+.science-copy p {
+  margin-bottom: 16px;
+}
+
+.patents-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 5% 68px;
+  border-top: 1px solid var(--line);
+}
+
+.patents-heading {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: start;
+  gap: 28px;
+  margin-bottom: 38px;
+}
+
+.patents-heading h2 {
+  color: var(--text);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  font-weight: 500;
+}
+
+.patents-heading p {
+  max-width: 510px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.patents-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px 20px;
+}
+
+.patent-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 145px;
+  padding: 0 8px 2px 18px;
+  border-left: 1px solid var(--text);
+  transition: border-color 0.2s ease, opacity 0.45s ease, transform 0.45s ease;
+}
+
+.patent-card::before,
+.patent-card::after {
+  position: absolute;
+  left: -3px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text);
+  content: "";
+}
+
+.patent-card::before { top: 0; }
+.patent-card::after { bottom: 0; }
+
+.patent-card:hover {
+  border-color: var(--muted);
+}
+
+.patent-card p {
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.3;
+}
+
+.patent-card .patent-number {
+  margin-top: auto;
+  padding-top: 14px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+  text-transform: uppercase;
+}
+
+.patents-section.is-ready:not(.is-visible) .patent-card {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.patents-section.is-visible .patent-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.patents-grid .patent-card:nth-child(2) { transition-delay: 0.05s; }
+.patents-grid .patent-card:nth-child(3) { transition-delay: 0.1s; }
+.patents-grid .patent-card:nth-child(4) { transition-delay: 0.15s; }
+.patents-grid .patent-card:nth-child(5) { transition-delay: 0.2s; }
+.patents-grid .patent-card:nth-child(6) { transition-delay: 0.25s; }
+.patents-grid .patent-card:nth-child(7) { transition-delay: 0.3s; }
+.patents-grid .patent-card:nth-child(8) { transition-delay: 0.35s; }
+
+.history-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 54px 5% 70px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 150px;
+}
+
+.history-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: clamp(28px, 5vw, 72px);
+}
+
+.history-layout > h2 {
+  max-width: 380px;
+  color: var(--text);
+  font-size: 2.75rem;
+  line-height: 1.08;
+  font-weight: 500;
+}
+
+.history-timeline {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.history-timeline::before {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 111px;
+  width: 1px;
+  background: var(--text);
+  content: "";
+}
+
+.history-item {
+  display: grid;
+  grid-template-columns: 90px 18px minmax(0, 1fr);
+  column-gap: 12px;
+  align-items: start;
+  padding-bottom: 34px;
+}
+
+.history-item:last-child {
+  padding-bottom: 0;
+}
+
+.history-year {
+  color: var(--text);
+  font-size: 2rem;
+  line-height: 1;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.history-marker {
+  z-index: 1;
+  width: 8px;
+  height: 8px;
+  margin: 7px auto 0;
+  border-radius: 50%;
+  background: #8ab4f8;
+}
+
+.history-entry {
+  min-width: 0;
+}
+
+.history-entry h3 {
+  margin-bottom: 14px;
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.history-entry p {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.4;
+  text-align: justify;
+  overflow-wrap: anywhere;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .patent-card,
+  .patents-section.is-ready:not(.is-visible) .patent-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.science-copy ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.science-copy li::before {
+  content: "✓";
+  color: var(--text);
+  margin-right: 10px;
+}
+
+.science-panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 12px 14px 0;
+  box-shadow: 0 10px 20px var(--shadow);
+}
+
+.mini-stat {
+  padding: 16px 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.mini-stat:last-child {
+  border-bottom: none;
+}
+
+.mini-stat strong {
+  display: block;
+  color: var(--text);
+  font-size: 1.08rem;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.mini-stat span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.crm-section {
+  padding: 22px 5% 70px;
+}
+
+.crm-box {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  text-align: center;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.btn-secondary {
+  margin-top: 20px;
+  background: var(--button);
+  color: var(--button-text);
+  padding: 12px 22px;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+.crm-box .btn-whatsapp {
+  background: #187a3e;
+  color: #fff;
+}
+
+footer {
+  background: #141414;
+  color: #d8d8d8;
+  padding: 28px 5%;
+  text-align: center;
+}
+
+footer p {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.disclaimer {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: #b8b8b8;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 6px 10px 0;
+  }
+
+  .nav-container {
+    gap: 6px;
+  }
+
+  .nav-topline {
+    min-height: 54px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .register-link,
+  .meta-link,
+  nav a,
+  .lang-link {
+    font-size: 0.72rem;
+  }
+
+  .consultor-banner-wrap {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .consultor-banner-box {
+    width: 50%;
+  }
+
+  .consultor-banner {
+    width: 100%;
+  }
+
+  .patrocinador-tag {
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+  }
+
+  .header-meta {
+    min-width: 0;
+    width: auto;
+    flex: 0 0 auto;
+    justify-content: center;
+  }
+
+  .whatsapp-link {
+    gap: 6px;
+  }
+
+  .whatsapp-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 8px 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn-nav {
+    padding: 8px 14px;
+    font-size: 0.72rem;
+  }
+
+  .hero {
+    padding-top: 18px;
+    padding-bottom: 28px;
+  }
+
+  .hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .product-carousel {
+    width: min(100%, 420px);
+    margin: 0 auto;
+  }
+
+  .hero-layout .hero-content {
+    text-align: center;
+  }
+
+  .glutathione-grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 300px;
+  }
+
+  .glutathione-inner > h2 {
+    font-size: 2rem;
+  }
+
+  .glutathione-card,
+  .glutathione-photo,
+  .glutathione-photo img {
+    min-height: 210px;
+  }
+
+  .hero h1 {
+    font-size: calc(clamp(2.2rem, 11vw, 3.2rem) - 5pt);
+  }
+
+  .hero-lead {
+    font-size: 0.98rem;
+  }
+
+  .btn-mega-cta {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .science-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .patents-heading {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .patents-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .history-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .history-layout > h2 {
+    max-width: none;
+    font-size: 2.25rem;
+  }
+
+  .history-timeline::before {
+    left: 78px;
+  }
+
+  .history-item {
+    grid-template-columns: 62px 16px minmax(0, 1fr);
+    column-gap: 8px;
+    padding-bottom: 28px;
+  }
+
+  .history-year {
+    font-size: 1.35rem;
+  }
+
+  .history-entry h3 {
+    margin-bottom: 9px;
+  }
+
+  .history-entry p {
+    font-size: 0.88rem;
+  }
+
+  .crm-box {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
