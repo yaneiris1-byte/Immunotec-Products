@@ -1,0 +1,9 @@
+{
+  "buildCommand": "npm run build:knowledge",
+  "functions": {
+    "api/chat.js": {
+      "maxDuration": 30,
+      "includeFiles": "agent/knowledge.generated.json"
+    }
+  }
+}

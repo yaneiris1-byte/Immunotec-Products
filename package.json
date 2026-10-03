@@ -1,0 +1,14 @@
+{
+  "name": "immunotec-site-assistant",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:knowledge": "node scripts/build-agent-knowledge.mjs"
+  },
+  "dependencies": {
+    "@upstash/ratelimit": "^2.0.5",
+    "@upstash/redis": "^1.35.3",
+    "cheerio": "^1.0.0",
+    "openai": "^5.12.2"
+  }
+}

@@ -58,36 +58,30 @@ header {
 }
 
 .nav-topline {
-  min-height: 60px;
+  position: relative;
+  min-height: 86px;
   padding-top: 0;
   flex-wrap: wrap;
+}
+
+.consultor-banner-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(460px, 44vw);
+  transform: translate(-50%, -50%);
 }
 
 .register-link,
 .meta-link {
   color: var(--text);
-  font-size: 0.82rem;
   font-weight: 500;
   letter-spacing: -0.02em;
-  transition: opacity 0.2s ease;
 }
 
-.register-link {
-  margin-left: 0;
-  margin-right: 4px;
-  flex-shrink: 0;
-}
-
-.consultor-banner-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1 1 100%;
-  max-width: 1280px;
-  padding: 0;
-  margin-top: 0;
-  order: -1;
-}
 
 .consultor-banner-box {
   display: flex;
@@ -96,7 +90,9 @@ header {
   justify-content: center;
   text-align: center;
   gap: 4px;
-  width: 50%;
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
 }
 
 .consultor-banner {
@@ -256,6 +252,21 @@ nav a:hover,
 .hero-layout .hero-content {
   max-width: none;
   text-align: left;
+}
+
+.hero-highlight {
+  display: inline-block;
+  max-width: 100%;
+  margin: 0 0 24px;
+  padding: 12px 16px;
+  border-left: 4px solid #187a3e;
+  background: #f3f7f4;
+  color: var(--text);
+  font-size: clamp(0.72rem, 2vw, 1.2rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0;
+  white-space: nowrap;
 }
 
 .product-carousel {
@@ -715,6 +726,26 @@ nav a:hover,
   gap: 28px 20px;
 }
 
+.patents-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.patent-studies-link {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.patents-actions .btn-secondary {
+  margin-top: 4px;
+}
+
 .patent-card {
   position: relative;
   display: flex;
@@ -995,15 +1026,21 @@ footer p {
   }
 
   .consultor-banner-wrap {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
     flex: 1 1 100%;
     max-width: 100%;
     min-width: 0;
     padding: 0;
     margin-top: 0;
+    transform: none;
   }
 
   .consultor-banner-box {
-    width: 50%;
+    width: 100%;
+    max-width: 460px;
   }
 
   .consultor-banner {
