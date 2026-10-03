@@ -269,6 +269,15 @@ nav a:hover,
   white-space: nowrap;
 }
 
+.hero-message {
+  margin: 0 0 16px;
+  color: var(--text);
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.1;
+  text-align: center;
+}
+
 .product-carousel {
   position: relative;
   width: 100%;
@@ -1096,6 +1105,10 @@ footer p {
 
   .hero-layout .hero-content {
     text-align: center;
+  }
+
+  .hero-message {
+    font-size: 2rem;
   }
 
   .glutathione-grid {
